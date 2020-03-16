@@ -1,0 +1,21 @@
+let a = [1, 2, 4, 5, -14, 636, 627, 548, 5353, 3532, 21, 5321.543, 3];
+function smallestElem(arr) {
+    smallestElement = a[0];
+    smallestIndex = 0;
+    for(let i = 0; i <= arr.length; i++){
+        if(arr[i] <= smallestElement){
+            smallestElement = arr[i];
+            smallestIndex = i;
+        }
+    }
+    return [smallestElement, smallestIndex];
+}
+function sort(arr){
+    let sortArr = [];
+    while(arr.length > 0){
+        sortArr.push(smallestElem(arr)[0]);
+        arr.splice(smallestElem(arr)[1], 1);
+    }
+    return sortArr;
+}
+console.log(sort(a));
