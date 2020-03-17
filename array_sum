@@ -1,0 +1,19 @@
+let a = [2, 8, 11],
+    i = 0;
+function sum(arr){
+    while(arr.length > 0){
+        i += arr[0];
+        arr.shift();
+        sum(arr);
+        return i;
+    }
+}
+console.log(sum(a));
+
+function sum2(arr){
+    if(arr.length == 0){
+        return 0;
+    }
+    return arr.shift() + sum2(arr);
+}
+console.log(sum2(a));
