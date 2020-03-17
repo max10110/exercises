@@ -1,0 +1,10 @@
+function qsort(arr){
+    if(arr.length < 2){
+        return arr;
+    }else{
+        let pivot = arr[Math.floor(Math.random() * arr.length)];
+        let less = arr.filter(value => value < pivot);
+        let greater = arr.filter(value => value > pivot);
+        return [...qsort(less), pivot, ...qsort(greater)];
+    }
+}
