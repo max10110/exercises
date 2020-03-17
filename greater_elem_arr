@@ -1,0 +1,9 @@
+function greater(arr){
+    let biggest = arr[0];
+    for(let i = 0; i <= arr.length; i++){
+        if(biggest < arr[i]){
+            biggest = arr[i];
+        }
+    }
+    return biggest;
+}
