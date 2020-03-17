@@ -6,15 +6,22 @@ function sum(arr){
         while(arrCopy.length > 0){
             i += arr[0];
             arrCopy.shift();
-            sum(arrCopy);
+            sumIn(arrCopy);
             return i;
         }
     } 
-    return sumIn(arr);
+    return sumIn();
 }
 console.log(sum(a));
 
+a = [2, 8, 11, 23];
+
 function sum2(arr){
-    return arr.length == 0 ? 0 : arr.shift() + sum2(arr);
+    let arrCopy = arr;
+    function sum2In(){
+        return arrCopy.length == 0 ? 0 : arrCopy.shift() + sum2In(arrCopy)
+    }
+    return sum2In();
+    
 }
 console.log(sum2(a));
