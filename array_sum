@@ -7,10 +7,5 @@ function sum(arr){
 }
 
 function sum2(arr){
-    let arrCopy = arr;
-    function sum2In(){
-        return arrCopy.length == 0 ? 0 : arrCopy.shift() + sum2In(arrCopy)
-    }
-    return sum2In();
-    
+    return arr.length == 0 ? 0 : arr.shift() + sum2(arr); 
 }
