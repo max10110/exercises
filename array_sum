@@ -1,20 +1,10 @@
-let a = [2, 8, 11, 23],
-    i = 0;
 function sum(arr){
-    let arrCopy = arr;
-    function sumIn(){
-        while(arrCopy.length > 0){
-            i += arr[0];
-            arrCopy.shift();
-            sumIn(arrCopy);
-            return i;
-        }
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++){
+        sum += arr[i];
     } 
-    return sumIn();
+    return sum;
 }
-console.log(sum(a));
-
-a = [2, 8, 11, 23];
 
 function sum2(arr){
     let arrCopy = arr;
@@ -24,4 +14,3 @@ function sum2(arr){
     return sum2In();
     
 }
-console.log(sum2(a));
