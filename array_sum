@@ -11,9 +11,6 @@ function sum(arr){
 console.log(sum(a));
 
 function sum2(arr){
-    if(arr.length == 0){
-        return 0;
-    }
-    return arr.shift() + sum2(arr);
+    return arr.length == 0 ? 0 : arr.shift() + sum2(arr);
 }
 console.log(sum2(a));
