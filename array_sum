@@ -1,12 +1,17 @@
-let a = [2, 8, 11],
-    i = 0;
+let a = [2, 8, 11, 23],
+    i = 0,
+    arrCopy;
 function sum(arr){
-    while(arr.length > 0){
-        i += arr[0];
-        arr.shift();
-        sum(arr);
-        return i;
-    }
+    arrCopy = arr;
+    function sumIn(){
+        while(arrCopy.length > 0){
+            i += arr[0];
+            arrCopy.shift();
+            sum(arrCopy);
+            return i;
+        }
+    } 
+    return sumIn(arr);
 }
 console.log(sum(a));
 
