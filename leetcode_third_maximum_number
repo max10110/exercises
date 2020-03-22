@@ -1,0 +1,28 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ /*
+ Given a non-empty array of integers, return the third maximum number in this array. If it does not exist, return the maximum number. The time complexity must be in O(n).
+ */
+function removeDuplicates(array) {
+  return array.filter((a, b) => array.indexOf(a) === b)
+};
+
+var thirdMax = function(nums) {
+    nums = removeDuplicates(nums)
+    console.log(nums);
+    if(nums.length < 3){
+        return Math.max(...nums);
+    }else{
+        let res = [];
+        while(nums.length > 0){
+            res.push(Math.max(...nums));
+            nums.splice(nums.indexOf(Math.max(...nums)), 1);
+            if(res.length > 3){
+                res.splice(res.indexOf(Math.min(...res)), 1)
+            }
+        }
+        return res[res.indexOf(Math.min(...res))];
+    }
+};
