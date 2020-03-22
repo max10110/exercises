@@ -1,0 +1,32 @@
+/**
+ * @param {number[][]} matrix
+ * @return {number[]}
+ */
+ /*
+ Given a m * n matrix of distinct numbers, return all lucky numbers in the matrix in any order.
+
+A lucky number is an element of the matrix such that it is the minimum element in its row and maximum in its column.
+ */
+let luckyNumbers  = function(matrix) {
+    for(let i = 0; i < matrix.length; i++){
+        let inMatrix = matrix[i];
+        let res = inMatrix[0],
+            b = 0,
+            index = 0;
+        for(let j = 0; j < inMatrix.length; j++){
+            if(inMatrix[j] < res){
+                res = inMatrix[j];
+                index = j;
+            }
+        }
+        for(let k = 0; k < matrix.length; k++){
+            if(res > matrix[k][index]){
+                b++;
+            }
+        }
+        if(b == matrix.length - 1){
+            return [res];
+        } 
+    }
+    return [];
+};
